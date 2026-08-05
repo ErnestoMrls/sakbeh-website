@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<title>Contacto — Sakbeh Technologies</title>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/icon.png" alt="" class="brand-icon">
+      Sakbeh Technologies
+    </a>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+        <span id="langEs" class="active-lang">ES</span>/<span id="langEn">EN</span>
+      </button>
+      <div class="nav-pages">
+        <a href="index.html" class="btn btn-outline" data-i18n="nav.home">Inicio</a>
+        <a href="software.html" class="btn btn-outline" data-i18n="nav.software">Software</a>
+        <a href="contact.html" class="btn" data-i18n="nav.contact">Contacto</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="quote-section" id="cotizar" style="padding-top:56px;">
+    <div class="wrap">
+      <div class="path-rule"><span class="dot"></span><span class="seg"></span></div>
+      <p class="eyebrow" style="color:#9FD9BE" data-i18n="quote.eyebrow">Cotización</p>
+      <h2 data-i18n="quote.h2">El siguiente paso para tu operación comienza aquí.</h2>
+      <p class="section-intro" data-i18n="quote.p">Conversemos sobre tus desafíos, tus objetivos y cómo la tecnología puede convertirse en una ventaja competitiva para tu organización.</p>
+
+      <form class="quote-form" id="quoteForm">
+        <div class="form-grid">
+          <div class="field">
+            <label data-i18n="quote.form.name">Nombre completo *</label>
+            <input type="text" name="nombre" required data-i18n-placeholder="quote.form.namePh" placeholder="Tu nombre">
+          </div>
+          <div class="field">
+            <label data-i18n="quote.form.company">Empresa *</label>
+            <input type="text" name="empresa" required data-i18n-placeholder="quote.form.companyPh" placeholder="Nombre de tu empresa">
+          </div>
+          <div class="field">
+            <label data-i18n="quote.form.email">Correo electrónico *</label>
+            <input type="email" name="correo" required data-i18n-placeholder="quote.form.emailPh" placeholder="correo@empresa.com">
+          </div>
+          <div class="field">
+            <label data-i18n="quote.form.phone">Teléfono</label>
+            <input type="tel" name="telefono" data-i18n-placeholder="quote.form.phonePh" placeholder="Opcional">
+          </div>
+          <div class="field">
+            <label data-i18n="quote.form.size">No. aproximado de usuarios / equipos</label>
+            <select name="tamano">
+              <option value="" data-i18n="quote.form.sizePh">Selecciona un rango</option>
+              <option value="1-10">1-10</option>
+              <option value="11-50">11-50</option>
+              <option value="51-200">51-200</option>
+              <option value="201-500">201-500</option>
+              <option value="500+">500+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label data-i18n="quote.form.urgency">Urgencia</label>
+            <select name="urgencia">
+              <option value="" data-i18n="quote.form.urgencyPh">¿Cuándo lo necesitas?</option>
+              <option data-i18n="quote.form.urgency1">Lo antes posible</option>
+              <option data-i18n="quote.form.urgency2">En 1-3 meses</option>
+              <option data-i18n="quote.form.urgency3">En 3-6 meses</option>
+              <option data-i18n="quote.form.urgency4">Aún explorando opciones</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="checkbox-group">
+          <label data-i18n="quote.form.services">Servicios de interés * (selecciona uno o más)</label>
+          <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" name="servicios" value="Desarrollo de Software a la Medida"><span data-i18n="services.1.title">Desarrollo de Software a la Medida</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="servicios" value="Automatizacion de Procesos"><span data-i18n="services.2.title">Automatización de Procesos de Negocio</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="servicios" value="Inteligencia Artificial"><span data-i18n="services.3.title">Soluciones de Inteligencia Artificial</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="servicios" value="Desarrollo Web"><span data-i18n="services.4.title">Desarrollo de Sitios y Aplicaciones Web</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="servicios" value="Consultoria TI"><span data-i18n="services.5.title">Consultoría TI y Transformación Digital</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="servicios" value="Productos de Software"><span data-i18n="services.6.title">Productos de Software</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="servicios" value="Otro"><span data-i18n="quote.form.other">Otro</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label data-i18n="quote.form.desc">Descripción de necesidades *</label>
+          <textarea name="descripcion" required data-i18n-placeholder="quote.form.descPh" placeholder="Cuéntanos brevemente sobre tu empresa, los retos que enfrentas y lo que esperas de Sakbeh Technologies..."></textarea>
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn" data-i18n="quote.form.submit">Enviar solicitud &rarr;</button>
+        </div>
+
+        <p class="form-note">
+          <span data-i18n="quote.form.note1">Al enviar este formulario, se abrirá tu cliente de correo con la información lista para enviar a nuestro equipo.</span>
+          <span data-i18n="quote.form.note2"> También puedes escribirnos directamente a</span>
+          <a href="mailto:contacto@sakbeh.mx">contacto@sakbeh.mx</a>
+        </p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;width:100%;">
+    <span>&copy; 2026 Sakbeh Technologies</span>
+    <div class="f-links">
+      <a href="index.html" data-i18n="nav.home">Inicio</a>
+      <a href="software.html" data-i18n="nav.software">Software</a>
+      <a href="contact.html" data-i18n="nav.contact">Contacto</a>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
