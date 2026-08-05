@@ -128,7 +128,17 @@ const translations = {
   "future.h3": {es:"Más software próximamente...", en:"More software coming soon..."},
   "future.p1": {es:"Sakbeh Technologies desarrolla continuamente herramientas de productividad, aplicaciones empresariales impulsadas por IA y software de escritorio.",
                 en:"Sakbeh Technologies is continuously developing productivity tools, AI-powered business applications, and desktop software."},
-  "future.p2": {es:"Mantente al tanto de los próximos lanzamientos.", en:"Stay tuned for future releases."}
+  "future.p2": {es:"Mantente al tanto de los próximos lanzamientos.", en:"Stay tuned for future releases."},
+
+  "typemaster.tagline": {es:"La forma moderna de dominar tus habilidades de mecanografía.", en:"The modern way to master your typing skills."},
+  "typemaster.desc": {es:"Mejora tu velocidad, precisión y consistencia a través de retos interactivos y ejercicios de mecanografía enfocados, diseñados para estudiantes, aprendices y profesionales.",
+                       en:"Improve your speed, accuracy, and consistency through interactive challenges and focused typing exercises designed for learners, students, and professionals."},
+  "typemaster.feature1": {es:"Modo Falling Words de estilo arcade", en:"Arcade-inspired Falling Words mode"},
+  "typemaster.feature2": {es:"Práctica completa de párrafos", en:"Full paragraph typing practice"},
+  "typemaster.feature3": {es:"Seguimiento de WPM y precisión en tiempo real", en:"Real-time WPM and accuracy tracking"},
+  "typemaster.feature4": {es:"Dificultad progresiva para todos los niveles", en:"Progressive difficulty for every skill level"},
+  "typemaster.feature5": {es:"Aplicación de escritorio moderna para Windows", en:"Modern Windows desktop application"},
+  "typemaster.downloadBtn": {es:"\u2b07 Descargar TypeMaster", en:"\u2b07 Download TypeMaster"}
 };
 
 const heroH1 = {
