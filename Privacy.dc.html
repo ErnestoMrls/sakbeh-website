@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#ffffff;}
+  * { box-sizing: border-box; }
+  a{color:#12897a;text-decoration:none}
+  a:hover{color:#2fd6b8}
+</style>
+</helmet>
+<div style="font-family:Inter,sans-serif;background:#ffffff;color:#0f1417;overflow-x:hidden">
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px;background:rgba(13,27,42,0.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.08)">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="assets/icon.png" alt="Sakbeh" style="width:30px;height:30px" />
+      <div style="display:flex;flex-direction:column;line-height:1.05">
+        <span style="font-weight:800;font-size:15px;color:#ffffff;letter-spacing:0.5px">SAKBEH</span>
+        <span style="font-weight:500;font-size:9px;color:#9fb3ae;letter-spacing:1.5px">TECHNOLOGIES</span>
+      </div>
+    </div>
+    <nav style="display:flex;align-items:center;gap:36px">
+      <a href="Home.dc.html" style="color:#c9d3d1;font-size:14px;font-weight:500">{{ navHome }}</a>
+      <a href="Software.dc.html" style="color:#c9d3d1;font-size:14px;font-weight:500">{{ navSoftware }}</a>
+      <a href="Contact.dc.html" style="color:#c9d3d1;font-size:14px;font-weight:500">{{ navContact }}</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:14px">
+      <div style="display:flex;background:rgba(255,255,255,0.08);border-radius:20px;padding:3px;gap:2px">
+        <button onClick="{{ setEs }}" style="border:none;background:{{ esBg }};color:{{ esColor }};font-size:12px;font-weight:700;padding:6px 12px;border-radius:16px;cursor:pointer">ES</button>
+        <button onClick="{{ setEn }}" style="border:none;background:{{ enBg }};color:{{ enColor }};font-size:12px;font-weight:700;padding:6px 12px;border-radius:16px;cursor:pointer">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <section style="padding:190px 40px 60px;background:linear-gradient(160deg,#0a1420,#0d1b2a 60%,#0b3530);text-align:center">
+    <div style="font-family:'JetBrains Mono',monospace;color:#2fd6b8;font-size:13px;letter-spacing:3px;font-weight:500;margin-bottom:24px">{{ pageEyebrow }}</div>
+    <h1 style="font-size:48px;font-weight:800;color:#ffffff;letter-spacing:-1px;margin:0">{{ pageTitle }}</h1>
+  </section>
+
+  <section style="padding:80px 40px 140px;background:#ffffff">
+    <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:36px">
+      <p style="font-size:13.5px;color:#5b6b68;margin:0">{{ lastUpdated }}</p>
+
+      <div>
+        <h2 style="font-size:20px;font-weight:800;margin:0 0 12px">{{ s1t }}</h2>
+        <p style="font-size:15px;line-height:1.75;color:#3a4644;margin:0">{{ s1b }}</p>
+      </div>
+      <div>
+        <h2 style="font-size:20px;font-weight:800;margin:0 0 12px">{{ s2t }}</h2>
+        <p style="font-size:15px;line-height:1.75;color:#3a4644;margin:0 0 12px">{{ s2b }}</p>
+        <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+          <sc-for list="{{ s2list }}" as="li" hint-placeholder-count="4">
+            <li style="font-size:15px;line-height:1.6;color:#3a4644">{{ li }}</li>
+          </sc-for>
+        </ul>
+      </div>
+      <div>
+        <h2 style="font-size:20px;font-weight:800;margin:0 0 12px">{{ s3t }}</h2>
+        <p style="font-size:15px;line-height:1.75;color:#3a4644;margin:0 0 12px">{{ s3b }}</p>
+        <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+          <sc-for list="{{ s3list }}" as="li" hint-placeholder-count="4">
+            <li style="font-size:15px;line-height:1.6;color:#3a4644">{{ li }}</li>
+          </sc-for>
+        </ul>
+      </div>
+      <div>
+        <h2 style="font-size:20px;font-weight:800;margin:0 0 12px">{{ s4t }}</h2>
+        <p style="font-size:15px;line-height:1.75;color:#3a4644;margin:0">{{ s4b }}</p>
+      </div>
+      <div>
+        <h2 style="font-size:20px;font-weight:800;margin:0 0 12px">{{ s5t }}</h2>
+        <p style="font-size:15px;line-height:1.75;color:#3a4644;margin:0 0 12px">{{ s5b }}</p>
+        <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+          <sc-for list="{{ s5list }}" as="li" hint-placeholder-count="5">
+            <li style="font-size:15px;line-height:1.6;color:#3a4644">{{ li }}</li>
+          </sc-for>
+        </ul>
+      </div>
+      <div>
+        <h2 style="font-size:20px;font-weight:800;margin:0 0 12px">{{ s6t }}</h2>
+        <p style="font-size:15px;line-height:1.75;color:#3a4644;margin:0">{{ s6b }}</p>
+      </div>
+      <div>
+        <h2 style="font-size:20px;font-weight:800;margin:0 0 12px">{{ s7t }}</h2>
+        <p style="font-size:15px;line-height:1.75;color:#3a4644;margin:0">{{ s7b }} <a href="mailto:contacto@sakbeh.mx">contacto@sakbeh.mx</a>.</p>
+      </div>
+      <div>
+        <h2 style="font-size:20px;font-weight:800;margin:0 0 12px">{{ s8t }}</h2>
+        <p style="font-size:15px;line-height:1.75;color:#3a4644;margin:0">{{ s8b }}</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#0a1420;padding:70px 40px 40px">
+    <div style="max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:48px">
+      <div>
+        <img src="assets/logo-full.png" alt="Sakbeh Technologies" style="height:34px;margin-bottom:14px"/>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#5b6b68;letter-spacing:2px;margin:0">{{ footerTagline }}</p>
+      </div>
+      <nav style="display:flex;gap:32px">
+        <a href="Home.dc.html" style="color:#c9d3d1;font-size:14px">{{ navHome }}</a>
+        <a href="Software.dc.html" style="color:#c9d3d1;font-size:14px">{{ navSoftware }}</a>
+        <a href="Contact.dc.html" style="color:#c9d3d1;font-size:14px">{{ navContact }}</a>
+        <a href="Privacy.dc.html" style="color:#c9d3d1;font-size:14px">{{ privacyLabel }}</a>
+      </nav>
+    </div>
+    <div style="max-width:1160px;margin:24px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <p style="font-size:12.5px;color:#5b6b68;margin:0">{{ copyright }}</p>
+      <p style="font-size:12.5px;color:#5b6b68;margin:0">{{ poweredBy }} <a href="https://www.a9technologies.net/" style="color:#5b6b68">A9 Technologies</a></p>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const T = {
+  es: {
+    navHome: 'Inicio', navSoftware: 'Software', navContact: 'Contacto', privacyLabel: 'Aviso de privacidad',
+    pageEyebrow: 'PRIVACIDAD', pageTitle: 'Aviso de Privacidad', lastUpdated: 'Última actualización: agosto de 2026',
+    s1t: '1. Responsable', s1b: 'Sakbeh Technologies ("Sakbeh", "nosotros"), con domicilio en Jalisco, México, es responsable del tratamiento de sus datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.',
+    s2t: '2. Datos que recabamos', s2b: 'Podemos recabar los siguientes datos cuando usted interactúa con nuestro sitio, formularios de contacto o software:',
+    s2list: ['Nombre y datos de contacto (correo electrónico, teléfono, empresa)','Contenido de los mensajes que nos envía','Datos técnicos básicos de uso (tipo de dispositivo, navegador)','Información que usted ingresa voluntariamente en nuestras aplicaciones de escritorio (ScribeIT, TypeMaster, PlanIT), la cual permanece almacenada localmente en su equipo salvo que usted decida compartirla'],
+    s3t: '3. Finalidades', s3b: 'Sus datos personales serán utilizados para las siguientes finalidades:',
+    s3list: ['Responder a sus solicitudes de contacto o cotización','Brindar soporte técnico sobre nuestros servicios o productos','Dar seguimiento comercial a proyectos de consultoría','Mejorar nuestro sitio y nuestras aplicaciones'],
+    s4t: '4. Transferencia de datos', s4b: 'No compartimos, vendemos ni transferimos sus datos personales a terceros, salvo que exista una obligación legal para ello o su consentimiento expreso.',
+    s5t: '5. Derechos ARCO', s5b: 'Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse (derechos ARCO) al tratamiento de sus datos personales, así como a revocar su consentimiento. Para ejercer estos derechos puede contactarnos indicando:',
+    s5list: ['Su nombre completo','El derecho que desea ejercer','Una descripción clara de los datos personales en cuestión','Documento que acredite su identidad'],
+    s6t: '6. Seguridad', s6b: 'Implementamos medidas administrativas y técnicas razonables para proteger sus datos personales contra pérdida, mal uso o acceso no autorizado.',
+    s7t: '7. Contacto', s7b: 'Para cualquier duda relacionada con este aviso de privacidad, escríbanos a',
+    s8t: '8. Cambios al aviso', s8b: 'Nos reservamos el derecho de actualizar este aviso de privacidad. Cualquier cambio será publicado en esta misma página con su fecha de actualización correspondiente.',
+    footerTagline: 'CONECTAMOS · ORDENAMOS · OPTIMIZAMOS', copyright: '© 2026 Sakbeh Technologies. Todos los derechos reservados.', poweredBy: 'Powered by'
+  },
+  en: {
+    navHome: 'Home', navSoftware: 'Software', navContact: 'Contact', privacyLabel: 'Privacy notice',
+    pageEyebrow: 'PRIVACY', pageTitle: 'Privacy Notice', lastUpdated: 'Last updated: August 2026',
+    s1t: '1. Data controller', s1b: 'Sakbeh Technologies ("Sakbeh", "we") based in Jalisco, Mexico, is responsible for the processing of your personal data in accordance with Mexico\'s Federal Law on Protection of Personal Data Held by Private Parties.',
+    s2t: '2. Data we collect', s2b: 'We may collect the following data when you interact with our site, contact forms or software:',
+    s2list: ['Name and contact details (email, phone, company)','The content of the messages you send us','Basic technical usage data (device type, browser)','Information you voluntarily enter in our desktop applications (ScribeIT, TypeMaster, PlanIT), which stays stored locally on your device unless you choose to share it'],
+    s3t: '3. Purposes', s3b: 'Your personal data will be used for the following purposes:',
+    s3list: ['Responding to contact or quote requests','Providing technical support for our services or products','Following up on consulting projects','Improving our site and applications'],
+    s4t: '4. Data transfer', s4b: 'We do not share, sell or transfer your personal data to third parties, except where legally required or with your express consent.',
+    s5t: '5. Your rights', s5b: 'You have the right to access, rectify, cancel or object to the processing of your personal data, as well as to revoke your consent. To exercise these rights, contact us providing:',
+    s5list: ['Your full name','The right you wish to exercise','A clear description of the personal data in question','A document proving your identity'],
+    s6t: '6. Security', s6b: 'We implement reasonable administrative and technical measures to protect your personal data against loss, misuse or unauthorized access.',
+    s7t: '7. Contact', s7b: 'For any question related to this privacy notice, write to us at',
+    s8t: '8. Changes to this notice', s8b: 'We reserve the right to update this privacy notice. Any changes will be published on this same page with the corresponding update date.',
+    footerTagline: 'WE CONNECT · WE ORDER · WE OPTIMIZE', copyright: '© 2026 Sakbeh Technologies. All rights reserved.', poweredBy: 'Powered by'
+  }
+};
+
+class Component extends DCLogic {
+  state = { lang: 'es' };
+  componentDidMount() {
+    const saved = localStorage.getItem('sakbeh-lang');
+    if (saved === 'es' || saved === 'en') this.setState({ lang: saved });
+  }
+  setLang = (l) => { this.setState({ lang: l }); localStorage.setItem('sakbeh-lang', l); };
+  renderVals() {
+    const lang = this.state.lang;
+    const t = T[lang];
+    return {
+      ...t,
+      setEs: () => this.setLang('es'),
+      setEn: () => this.setLang('en'),
+      esBg: lang === 'es' ? '#2fd6b8' : 'transparent',
+      esColor: lang === 'es' ? '#0a1420' : '#c9d3d1',
+      enBg: lang === 'en' ? '#2fd6b8' : 'transparent',
+      enColor: lang === 'en' ? '#0a1420' : '#c9d3d1'
+    };
+  }
+}
+</script>
+</body>
+</html>

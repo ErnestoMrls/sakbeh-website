@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#ffffff;}
+  * { box-sizing: border-box; }
+  a{color:#12897a;text-decoration:none}
+  a:hover{color:#2fd6b8}
+  @keyframes binaryPulse{0%,100%{opacity:.08}50%{opacity:.32}}
+</style>
+</helmet>
+<div style="font-family:Inter,sans-serif;background:#ffffff;color:#0f1417;overflow-x:hidden">
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px;background:rgba(13,27,42,0.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.08)">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="assets/icon.png" alt="Sakbeh" style="width:30px;height:30px" />
+      <div style="display:flex;flex-direction:column;line-height:1.05">
+        <span style="font-weight:800;font-size:15px;color:#ffffff;letter-spacing:0.5px">SAKBEH</span>
+        <span style="font-weight:500;font-size:9px;color:#9fb3ae;letter-spacing:1.5px">TECHNOLOGIES</span>
+      </div>
+    </div>
+    <nav style="display:flex;align-items:center;gap:36px">
+      <a href="Home.dc.html" style="color:#c9d3d1;font-size:14px;font-weight:500">{{ navHome }}</a>
+      <a href="Software.dc.html" style="color:#ffffff;font-size:14px;font-weight:500">{{ navSoftware }}</a>
+      <a href="Contact.dc.html" style="color:#c9d3d1;font-size:14px;font-weight:500">{{ navContact }}</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:14px">
+      <div style="display:flex;background:rgba(255,255,255,0.08);border-radius:20px;padding:3px;gap:2px">
+        <button onClick="{{ setEs }}" style="border:none;background:{{ esBg }};color:{{ esColor }};font-size:12px;font-weight:700;padding:6px 12px;border-radius:16px;cursor:pointer">ES</button>
+        <button onClick="{{ setEn }}" style="border:none;background:{{ enBg }};color:{{ enColor }};font-size:12px;font-weight:700;padding:6px 12px;border-radius:16px;cursor:pointer">EN</button>
+      </div>
+      <a href="Contact.dc.html" style="background:linear-gradient(135deg,#0b4f49,#2fd6b8);color:#ffffff;font-size:13px;font-weight:700;padding:9px 20px;border-radius:20px">{{ navContact }}</a>
+    </div>
+  </header>
+
+  <section style="position:relative;overflow:hidden;padding:190px 40px 90px;background:linear-gradient(160deg,#0a1420,#0d1b2a 60%,#0b3530);text-align:center">
+    <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(18,1fr);mask-image:radial-gradient(ellipse 560px 320px at center,transparent 0%,transparent 55%,black 85%);-webkit-mask-image:radial-gradient(ellipse 560px 320px at center,transparent 0%,transparent 55%,black 85%)">
+      <sc-for list="{{ binaryDigits }}" as="d" hint-placeholder-count="90">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#2fd6b8;text-align:center;padding:8px 0;animation:binaryPulse 5s ease-in-out infinite;animation-delay:{{ d.delay }}">{{ d.ch }}</span>
+      </sc-for>
+    </div>
+    <div style="position:relative;z-index:2">
+      <div style="font-family:'JetBrains Mono',monospace;color:#2fd6b8;font-size:13px;letter-spacing:3px;font-weight:500;margin-bottom:24px">{{ pageEyebrow }}</div>
+      <h1 style="font-size:58px;font-weight:800;color:#ffffff;letter-spacing:-1.5px;margin:0 0 20px">{{ pageTitle }}</h1>
+      <p style="font-size:17px;color:#aebcb9;max-width:600px;margin:0 auto">{{ pageDesc }}</p>
+    </div>
+  </section>
+
+  <section id="scribeit" style="padding:130px 40px;background:#ffffff">
+    <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+      <div>
+        <img src="assets/scribeit-wordmark.png" alt="ScribeIT" style="height:52px;margin-bottom:26px"/>
+        <p style="font-size:19px;font-weight:600;color:#0f1417;line-height:1.6;margin:0 0 16px">{{ scribeitTag }}</p>
+        <p style="font-size:15.5px;color:#5b6b68;line-height:1.75;margin:0 0 34px">{{ scribeitDesc }}</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:38px">
+          <sc-for list="{{ scribeitFeatures }}" as="f" hint-placeholder-count="6">
+            <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a4644;line-height:1.4">
+              <span style="color:#12897a;font-weight:700">✓</span><span>{{ f }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px">
+          <span style="background:#f4f6f6;border:1px solid #e4e8e7;color:#3a4644;font-size:12.5px;font-weight:600;padding:8px 16px;border-radius:16px">{{ scribeitBadge1 }}</span>
+          <span style="background:#f4f6f6;border:1px solid #e4e8e7;color:#3a4644;font-size:12.5px;font-weight:600;padding:8px 16px;border-radius:16px">{{ scribeitBadge2 }}</span>
+        </div>
+        <a href="https://github.com/ErnestoMrls/ScribeIT/releases/download/v1.1.0/ScribeIT-Setup-1.1.0.exe" style="display:inline-block;background:linear-gradient(135deg,#0b4f49,#2fd6b8);color:#ffffff;font-size:14.5px;font-weight:700;padding:13px 26px;border-radius:22px">{{ downloadLabel }}</a>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <img src="assets/scribeit-screenshot.png" alt="ScribeIT app screenshot" style="width:100%;max-width:480px;border-radius:16px;box-shadow:0 40px 80px rgba(13,27,42,0.28)"/>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:80px 40px 130px;background:#f4f6f6">
+    <div style="max-width:1160px;margin:0 auto">
+      <h3 style="font-size:26px;font-weight:800;letter-spacing:-0.4px;margin:0 0 40px">{{ scribeitWorkflowTitle }}</h3>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+        <sc-for list="{{ scribeitSteps }}" as="st" hint-placeholder-count="4">
+          <div style="background:#ffffff;border:1px solid #e4e8e7;border-radius:18px;padding:28px 24px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#2fd6b8;font-weight:700;margin-bottom:14px">{{ st.n }}</div>
+            <h4 style="font-size:15.5px;font-weight:700;margin:0 0 8px">{{ st.t }}</h4>
+            <p style="font-size:13.5px;color:#5b6b68;line-height:1.6;margin:0">{{ st.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="typemaster" style="padding:130px 40px;background:#0d1b2a">
+    <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+      <div style="display:flex;justify-content:center">
+        <img src="assets/typemaster-screenshot.png" alt="TypeMaster app screenshot" style="width:100%;max-width:400px;border-radius:16px;box-shadow:0 40px 80px rgba(0,0,0,0.55)"/>
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+          <img src="assets/typemaster-icon.png" style="width:52px;height:52px;border-radius:12px" alt="TypeMaster"/>
+          <h2 style="font-size:36px;font-weight:800;color:#ffffff;margin:0;letter-spacing:-0.5px">{{ typemasterTitle }}</h2>
+        </div>
+        <p style="font-size:19px;font-weight:600;color:#dce6e4;line-height:1.6;margin:0 0 16px">{{ typemasterTag }}</p>
+        <p style="font-size:15.5px;color:#9fb3ae;line-height:1.75;margin:0 0 34px">{{ typemasterDesc }}</p>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:34px">
+          <sc-for list="{{ typemasterFeatures }}" as="f" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;gap:10px;font-size:14.5px;color:#c9d3d1">
+              <span style="color:#2fd6b8;font-weight:700">✓</span>{{ f }}
+            </div>
+          </sc-for>
+        </div>
+        <span style="display:inline-block;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);color:#c9d3d1;font-size:12.5px;font-weight:600;padding:8px 16px;border-radius:16px;margin-bottom:28px">{{ typemasterBadge }}</span>
+        <div>
+          <a href="https://github.com/ErnestoMrls/TypeMaster/releases/download/v1.0.0/TypeMaster.exe" style="display:inline-block;background:linear-gradient(135deg,#0b4f49,#2fd6b8);color:#ffffff;font-size:14.5px;font-weight:700;padding:13px 26px;border-radius:22px">{{ downloadLabel }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="planit" style="padding:130px 40px;background:#f4f6f6">
+    <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+          <img src="assets/planit-icon.png" alt="PlanIT" style="width:52px;height:52px;border-radius:12px"/>
+          <h2 style="font-size:36px;font-weight:800;margin:0;letter-spacing:-0.5px">{{ planitTitle }}</h2>
+        </div>
+        <p style="font-size:19px;font-weight:600;color:#0f1417;line-height:1.6;margin:0 0 16px">{{ planitTag }}</p>
+        <p style="font-size:15.5px;color:#5b6b68;line-height:1.75;margin:0 0 34px">{{ planitDesc }}</p>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:36px">
+          <sc-for list="{{ planitFeatures }}" as="f" hint-placeholder-count="5">
+            <div style="display:flex;align-items:center;gap:10px;font-size:14.5px;color:#3a4644">
+              <span style="color:#12897a;font-weight:700">✓</span>{{ f }}
+            </div>
+          </sc-for>
+        </div>
+        <a href="https://github.com/ErnestoMrls/PlanIT/releases/download/v1.0.0/PlanIT-1.0.0-portable.exe" style="display:inline-block;background:linear-gradient(135deg,#0b4f49,#2fd6b8);color:#ffffff;font-size:14.5px;font-weight:700;padding:13px 26px;border-radius:22px">{{ downloadLabel }}</a>
+      </div>
+      <div style="background:#ffffff;border:1px solid #e4e8e7;border-radius:20px;padding:32px;box-shadow:0 30px 70px rgba(13,27,42,0.12)">
+        <div style="display:flex;gap:14px;margin-bottom:20px">
+          <div style="flex:1;background:#f4f6f6;border-radius:12px;padding:14px">
+            <div style="font-size:11px;font-weight:700;color:#5b6b68;letter-spacing:0.5px;margin-bottom:10px">TODO</div>
+            <div style="background:#ffffff;border-radius:8px;padding:10px;font-size:12px;color:#3a4644;margin-bottom:8px;box-shadow:0 2px 6px rgba(0,0,0,0.05)">Diseño de API</div>
+            <div style="background:#ffffff;border-radius:8px;padding:10px;font-size:12px;color:#3a4644;box-shadow:0 2px 6px rgba(0,0,0,0.05)">QA sprint 3</div>
+          </div>
+          <div style="flex:1;background:#f4f6f6;border-radius:12px;padding:14px">
+            <div style="font-size:11px;font-weight:700;color:#12897a;letter-spacing:0.5px;margin-bottom:10px">EN CURSO</div>
+            <div style="background:#ffffff;border-radius:8px;padding:10px;font-size:12px;color:#3a4644;box-shadow:0 2px 6px rgba(0,0,0,0.05)">Migración de datos</div>
+          </div>
+          <div style="flex:1;background:#f4f6f6;border-radius:12px;padding:14px">
+            <div style="font-size:11px;font-weight:700;color:#2fd6b8;letter-spacing:0.5px;margin-bottom:10px">LISTO</div>
+            <div style="background:#ffffff;border-radius:8px;padding:10px;font-size:12px;color:#3a4644;box-shadow:0 2px 6px rgba(0,0,0,0.05)">Onboarding v2</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px">
+          <sc-for list="{{ planitCalendar }}" as="c" hint-placeholder-count="21">
+            <div style="aspect-ratio:1;border-radius:6px;background:{{ c.bg }}"></div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:140px 40px;background:linear-gradient(135deg,#0b4f49,#12897a 55%,#2fd6b8);text-align:center">
+    <h2 style="font-size:40px;font-weight:800;color:#ffffff;letter-spacing:-1px;margin:0 0 20px">{{ closingTitle }}</h2>
+    <p style="font-size:16.5px;color:rgba(255,255,255,0.9);margin:0 0 40px">{{ closingDesc }}</p>
+    <a href="Contact.dc.html" style="display:inline-block;background:#ffffff;color:#0b4f49;font-size:15px;font-weight:700;padding:16px 36px;border-radius:26px">{{ closingCta }}</a>
+  </section>
+
+  <footer style="background:#0a1420;padding:70px 40px 40px">
+    <div style="max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:48px">
+      <div>
+        <img src="assets/logo-full.png" alt="Sakbeh Technologies" style="height:34px;margin-bottom:14px"/>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#5b6b68;letter-spacing:2px;margin:0">{{ footerTagline }}</p>
+      </div>
+      <nav style="display:flex;gap:32px">
+        <a href="Home.dc.html" style="color:#c9d3d1;font-size:14px">{{ navHome }}</a>
+        <a href="Software.dc.html" style="color:#c9d3d1;font-size:14px">{{ navSoftware }}</a>
+        <a href="Contact.dc.html" style="color:#c9d3d1;font-size:14px">{{ navContact }}</a>
+        <a href="Privacy.dc.html" style="color:#c9d3d1;font-size:14px">{{ privacyLabel }}</a>
+      </nav>
+    </div>
+    <div style="max-width:1160px;margin:24px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <p style="font-size:12.5px;color:#5b6b68;margin:0">{{ copyright }}</p>
+      <p style="font-size:12.5px;color:#5b6b68;margin:0">{{ poweredBy }} <a href="https://www.a9technologies.net/" style="color:#5b6b68">A9 Technologies</a></p>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const T = {
+  es: {
+    navHome: 'Inicio', navSoftware: 'Software', navContact: 'Contacto',
+    pageEyebrow: 'SOFTWARE DESTACADO', pageTitle: 'Herramientas listas para usar',
+    pageDesc: 'Productos propios que resuelven problemas reales del día a día, disponibles hoy mismo.',
+    scribeitTag: 'Asistente profesional de documentación para equipos de soporte de TI.',
+    scribeitDesc: 'Crea notas de ticket estandarizadas en segundos, mejora la comunicación entre equipos de soporte y aumenta la calidad de la documentación — todo desde una aplicación de escritorio pensada para el flujo real de trabajo de TI.',
+    scribeitFeatures: ['Plantillas de tickets estandarizadas','Notas adhesivas privadas por ticket','Generación de documentación en un clic','Mejora con IA (próximamente)','Windows 10 / Windows 11','Gratis para uso personal y profesional'],
+    scribeitBadge1: 'Gratis', scribeitBadge2: 'Windows 10/11',
+    scribeitWorkflowTitle: 'Cómo funciona',
+    scribeitSteps: [
+      {n:'01', t:'Captura', d:'Registra contacto, dispositivo y prioridad en un formulario guiado.'},
+      {n:'02', t:'Documenta', d:'Detalla el problema y la solución paso a paso.'},
+      {n:'03', t:'Genera', d:'Crea la nota de ticket final con un clic.'},
+      {n:'04', t:'Comparte', d:'Copia o exporta la documentación lista para tu equipo.'}
+    ],
+    typemasterTitle: 'TypeMaster', typemasterTag: 'La forma moderna de dominar tus habilidades de mecanografía.',
+    typemasterDesc: 'Mejora tu velocidad, precisión y consistencia a través de retos interactivos y ejercicios de mecanografía enfocados, diseñados para estudiantes, aprendices y profesionales.',
+    typemasterFeatures: ['Modo Falling Words estilo arcade','Práctica de párrafos guiada','Seguimiento de WPM y precisión en tiempo real','Aplicación de escritorio moderna para Windows'],
+    typemasterBadge: 'Windows',
+    planitTitle: 'PlanIT', planitTag: 'La forma moderna de planificar proyectos y mantener a tu equipo organizado.',
+    planitDesc: 'Centraliza proyectos, tareas, fechas límite y progreso en una sola aplicación diseñada para ayudarte a trabajar de forma más rápida y eficiente.',
+    planitFeatures: ['Organiza proyectos y tareas fácilmente','Asigna responsables y fechas de entrega','Visualiza el progreso con paneles y calendarios','Exporta proyectos a PDF, Excel y CSV','Aplicación moderna para Windows'],
+    downloadLabel: 'Descargar',
+    closingTitle: '¿Tienes una idea para tu propia herramienta?', closingDesc: 'Diseñamos y construimos software a la medida de tu operación.', closingCta: 'Hablemos',
+    footerTagline: 'CONECTAMOS · ORDENAMOS · OPTIMIZAMOS',
+    copyright: '© 2026 Sakbeh Technologies. Todos los derechos reservados.',
+    privacyLabel: 'Aviso de privacidad', poweredBy: 'Powered by'
+  },
+  en: {
+    navHome: 'Home', navSoftware: 'Software', navContact: 'Contact',
+    pageEyebrow: 'FEATURED SOFTWARE', pageTitle: 'Ready-to-use tools',
+    pageDesc: 'Our own products, built to solve real day-to-day problems, available today.',
+    scribeitTag: 'A professional documentation assistant for IT support teams.',
+    scribeitDesc: 'Create standardized ticket notes in seconds, improve communication across support teams and raise documentation quality — all from a desktop app built around the real IT workflow.',
+    scribeitFeatures: ['Standardized ticket templates','Private sticky notes per ticket','One-click documentation generation','AI enhancement (coming soon)','Windows 10 / Windows 11','Free for personal and professional use'],
+    scribeitBadge1: 'Free', scribeitBadge2: 'Windows 10/11',
+    scribeitWorkflowTitle: 'How it works',
+    scribeitSteps: [
+      {n:'01', t:'Capture', d:'Log contact, device and priority through a guided form.'},
+      {n:'02', t:'Document', d:'Detail the issue and the resolution step by step.'},
+      {n:'03', t:'Generate', d:'Create the final ticket note in one click.'},
+      {n:'04', t:'Share', d:'Copy or export the documentation, ready for your team.'}
+    ],
+    typemasterTitle: 'TypeMaster', typemasterTag: 'The modern way to master your typing skills.',
+    typemasterDesc: 'Improve your speed, accuracy and consistency through focused, interactive typing challenges built for students, learners and professionals.',
+    typemasterFeatures: ['Arcade-style Falling Words mode','Guided paragraph practice','Real-time WPM & accuracy tracking','Modern desktop app for Windows'],
+    typemasterBadge: 'Windows',
+    planitTitle: 'PlanIT', planitTag: 'The modern way to plan projects and keep your team organized.',
+    planitDesc: 'Centralize projects, tasks, deadlines and progress in one app designed to help you work faster and more efficiently.',
+    planitFeatures: ['Organize projects and tasks with ease','Assign owners and due dates','Visualize progress with boards and calendars','Export projects to PDF, Excel and CSV','Modern desktop app for Windows'],
+    downloadLabel: 'Download',
+    closingTitle: 'Have an idea for your own tool?', closingDesc: "We design and build software tailored to your operation.", closingCta: "Let's talk",
+    footerTagline: 'WE CONNECT · WE ORDER · WE OPTIMIZE',
+    copyright: '© 2026 Sakbeh Technologies. All rights reserved.',
+    privacyLabel: 'Privacy notice', poweredBy: 'Powered by'
+  }
+};
+
+class Component extends DCLogic {
+  state = { lang: 'es' };
+  binaryDigits = Array.from({length: 90}, () => ({ ch: Math.random() > 0.5 ? '1' : '0', delay: (Math.random() * 6).toFixed(2) + 's' }));
+  componentDidMount() {
+    const saved = localStorage.getItem('sakbeh-lang');
+    if (saved === 'es' || saved === 'en') this.setState({ lang: saved });
+  }
+  setLang = (l) => { this.setState({ lang: l }); localStorage.setItem('sakbeh-lang', l); };
+  planitCalendar = Array.from({length: 21}, (_, i) => ({ bg: [7,8,14].includes(i) ? '#2fd6b8' : '#e4e8e7' }));
+  renderVals() {
+    const lang = this.state.lang;
+    const t = T[lang];
+    return {
+      ...t,
+      binaryDigits: this.binaryDigits,
+      planitCalendar: this.planitCalendar,
+      setEs: () => this.setLang('es'),
+      setEn: () => this.setLang('en'),
+      esBg: lang === 'es' ? '#2fd6b8' : 'transparent',
+      esColor: lang === 'es' ? '#0a1420' : '#c9d3d1',
+      enBg: lang === 'en' ? '#2fd6b8' : 'transparent',
+      enColor: lang === 'en' ? '#0a1420' : '#c9d3d1'
+    };
+  }
+}
+</script>
+</body>
+</html>
